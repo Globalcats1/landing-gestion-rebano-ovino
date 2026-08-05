@@ -36,18 +36,33 @@
     <style>
       :root {
         color-scheme: light only;
-        --lime: #b4d96a;
-        --lime-bright: #c7e878;
-        --olive: #3b4a1c;
-        --olive-deep: #25300f;
-        --ink: #14180c;
-        --bone: #f5f1e6;
-        --bone-2: #ece5d3;
-        --gold: #e39a2e;
-        --gold-soft: #f0b752;
-        --navy: #16244d;
-        --line: rgba(37, 48, 15, 0.14);
-        --shadow: 0 22px 60px -22px rgba(20, 24, 12, 0.5);
+
+        /* Acento relacionado con la identidad del curso */
+        --lime: #78a65a;
+        --lime-bright: #8fba70;
+
+        /* Tonos oscuros profesionales */
+        --olive: #294f53;
+        --olive-deep: #18383d;
+
+        /* Texto principal */
+        --ink: #252b2a;
+
+        /* Fondos claros y elegantes */
+        --bone: #f7f6f1;
+        --bone-2: #eceee9;
+
+        /* Acento premium */
+        --gold: #b28a4a;
+        --gold-soft: #d1b47a;
+
+        /* Azul petróleo */
+        --navy: #244f59;
+
+        /* Bordes y sombras */
+        --line: rgba(36, 79, 89, 0.14);
+        --shadow: 0 24px 55px -26px rgba(24, 56, 61, 0.42);
+
         --r: 20px;
       }
       * {
@@ -59,7 +74,7 @@
         scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
         color-scheme: light only;
-        background: #f5f1e6;
+        background: var(--bone);
       }
       body {
         font-family: "Barlow", system-ui, sans-serif;
@@ -125,21 +140,25 @@
         transform: translateY(0);
       }
       .btn-lime {
-        background: var(--lime);
-        color: var(--olive-deep);
-        box-shadow: 0 12px 28px -10px rgba(180, 217, 106, 0.85);
-      }
-      .btn-lime:hover {
-        background: var(--lime-bright);
-        box-shadow: 0 16px 34px -10px rgba(180, 217, 106, 0.95);
-      }
-      .btn-olive {
         background: var(--olive-deep);
-        color: var(--lime);
-      }
-      .btn-olive:hover {
+        color: #ffffff;
+        box-shadow: 0 14px 30px -14px rgba(24, 56, 61, 0.65);
+    }
+    .btn-lime:hover {
         background: var(--olive);
-      }
+        box-shadow: 0 18px 38px -14px rgba(24, 56, 61, 0.72);
+    }
+      .btn-olive {
+        background: transparent;
+        color: var(--olive-deep);
+        border-color: rgba(24, 56, 61, 0.45);
+        }
+
+        .btn-olive:hover {
+        background: var(--olive-deep);
+        color: #ffffff;
+        border-color: var(--olive-deep);
+        }
       .btn-ghost {
         background: transparent;
         border-color: currentColor;
@@ -230,39 +249,46 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        background: linear-gradient(
-          180deg,
-          #26355f 0%,
-          #4a3f52 26%,
-          #9a5a34 52%,
-          #d98a3d 74%,
-          #f0b657 100%
-        );
+
+        background:
+            radial-gradient(
+            circle at 50% 42%,
+            rgba(143, 186, 112, 0.12),
+            transparent 38%
+            ),
+            linear-gradient(
+            145deg,
+            #172f35 0%,
+            #294f53 52%,
+            #78857d 100%
+            );
       }
       .hero .glow {
         position: absolute;
-        right: -10%;
-        bottom: 6%;
-        width: 70vmin;
-        height: 70vmin;
+        right: -12%;
+        bottom: 4%;
+        width: 68vmin;
+        height: 68vmin;
         border-radius: 50%;
+
         background: radial-gradient(
-          circle,
-          rgba(255, 215, 130, 0.85),
-          rgba(240, 150, 60, 0.25) 45%,
-          transparent 68%
+            circle,
+            rgba(168, 190, 140, 0.24) 0%,
+            rgba(120, 166, 90, 0.1) 42%,
+            transparent 70%
         );
-        filter: blur(10px);
+
+        filter: blur(18px);
         z-index: 0;
-      }
+        }
       .hero .halo {
         position: absolute;
         inset: 0;
         z-index: 0;
         background: radial-gradient(
-          120% 90% at 50% 42%,
-          transparent 55%,
-          rgba(12, 15, 6, 0.4) 100%
+            120% 90% at 50% 42%,
+            transparent 55%,
+            rgba(12, 15, 6, 0.4) 100%
         );
       }
       .hero-body {
@@ -281,7 +307,7 @@
       }
       .poster {
         position: relative;
-        filter: drop-shadow(0 30px 60px rgba(10, 12, 4, 0.55));
+        filter: drop-shadow(0 30px 60px rgba(14, 31, 34, 0.5));
         border-radius: 18px;
         overflow: hidden;
         animation: floaty 6s ease-in-out infinite;
@@ -349,10 +375,12 @@
 
       /* franja de valor */
       .strip {
-        background: var(--lime);
-        color: var(--olive-deep);
+        background: var(--olive-deep);
+        color: #ffffff;
         position: relative;
         z-index: 4;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .strip .wrap {
         display: flex;
@@ -485,12 +513,8 @@
         box-shadow: 0 10px 20px -10px rgba(37, 48, 15, 0.5);
       }
       .tag::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
         background: var(--lime);
-      }
+        }
 
       .incl {
         background: var(--olive-deep);
@@ -1123,7 +1147,7 @@
         <div class="poster-wrap" id="posterWrap">
           <div class="poster">
             <img
-              src="/gestion-manejo-estrategico.jpeg""
+              src="/gestion-manejo-estrategico.jpeg"
               alt="Gestión y Manejo Estratégico del Rebaño Ovino — 19, 20 y 21 de octubre 2026, Ex Hacienda El Zoquital"
             />
           </div>
