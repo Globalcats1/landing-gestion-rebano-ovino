@@ -199,9 +199,10 @@
         padding: 1rem 0;
       }
       .nav.solid {
-        background: rgba(16, 37, 63, 0.94);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 8px 24px -10px rgba(16, 37, 63, 0.65);
+        background: rgba(79, 134, 198, 0.95);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 8px 24px -10px rgba(35, 78, 120, 0.35);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         padding: 0.55rem 0;
       }
       .nav .wrap {
@@ -434,9 +435,9 @@
         color: var(--olive-deep);
       }
       .why-card {
-        background: var(--olive-deep);
-        color: var(--bone);
-        border-radius: calc(var(--r)+6px);
+        background: #4f86c6;
+        color: #ffffff;
+        border-radius: 0;
         padding: 2rem;
         box-shadow: var(--shadow);
       }
@@ -708,40 +709,44 @@
       }
       /* ---------- PROMOCIONES ---------- */
 
+      /* ---------- PROMOCIONES ---------- */
+
       .promo-banner {
         margin: 2rem auto;
-        background: var(--navy-deep);
-        color: #ffffff;
-        border: 1px solid rgba(110, 179, 243, 0.22);
-        border-radius: 0;
+        background: #ffffff;
+        color: var(--navy-deep);
+        border: 1px solid rgba(45, 115, 201, 0.14);
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 18px 40px -18px rgba(16, 37, 63, 0.45);
+        box-shadow: 0 16px 36px -20px rgba(16, 37, 63, 0.28);
       }
 
       .promo-banner__header {
-        padding: 1.3rem 1.5rem 1.1rem;
+        padding: 1.5rem 1.5rem 1.3rem;
         text-align: center;
-        background: var(--navy-dark);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+        background: linear-gradient(180deg, #dcecff 0%, #eef6fd 100%);
+
+        border-bottom: 1px solid rgba(45, 115, 201, 0.18);
       }
 
       .promo-banner__header .eyebrow {
-        color: var(--gold-soft);
+        color: var(--gold);
       }
 
       .promo-banner__header h3 {
         margin: 0.35rem 0;
-        color: #ffffff;
+        color: var(--navy-deep);
         font-family: "Barlow Condensed", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+        font-weight: 700;
+        letter-spacing: 0.02em;
       }
 
       .promo-banner__header p {
         max-width: 650px;
         margin: 0 auto;
-        color: rgba(255, 255, 255, 0.78);
+        color: #62758a;
       }
 
       .promo-banner__grid {
@@ -750,13 +755,13 @@
       }
 
       .promo-item {
-        padding: 1.5rem;
+        padding: 1.7rem 1.5rem;
         text-align: center;
-        background: rgba(255, 255, 255, 0.035);
+        background: #ffffff;
       }
 
       .promo-item:first-child {
-        border-right: 1px solid rgba(255, 255, 255, 0.14);
+        border-right: 1px solid rgba(45, 115, 201, 0.14);
       }
 
       .promo-item__icon {
@@ -766,17 +771,14 @@
 
       .promo-item h4 {
         margin: 0 0 0.45rem;
-        color: var(--lime-bright);
-        font-family: "Barlow Condensed", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
+        color: var(--navy);
         font-size: 1.08rem;
       }
 
       .promo-item p {
         max-width: 420px;
         margin: 0 auto;
-        color: rgba(255, 255, 255, 0.76);
+        color: var(--muted);
         line-height: 1.5;
       }
 
@@ -787,7 +789,7 @@
 
         .promo-item:first-child {
           border-right: none;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+          border-bottom: 1px solid rgba(45, 115, 201, 0.14);
         }
       }
 
@@ -1641,28 +1643,29 @@
 
     <script>
       /* =======================================================================
-   CONFIGURACIÓN  ·  edita estos valores
-   ======================================================================= */
+       CONFIGURACIÓN  ·  edita estos valores
+       ======================================================================= */
       const WHATSAPP = "527711896945"; // reservas (52 + 10 dígitos)
 
       /* Paquetes: nombre, precio actual, precio regular (tachado) y link de Mercado Pago.
-   ⚠️ Cuando termine el Hot Sale, cambia 'price' y 'link' del Taller. */
+       ⚠️ Cuando termine el Hot Sale, cambia 'price' y 'link' del Taller. */
       const PACKAGES = [
         {
-          id: "taller",
-          name: "Taller de Selección de Ovinos",
-          desc: "Inscripción completa · 2 días de taller práctico.",
-          price: 5999,
-          regular: 6999,
-          link: "https://mpago.la/2T8En68",
+          id: "Diplomado",
+          name: "Diplomado Ovinocultura 360°",
+          desc: "Inscripción completa · 3 días de taller práctico.",
+          price: 7650,
+          regular: 8999,
+          /*link: "https://mpago.la/2T8En68",*/
           feature: true,
           flag: "Precio Hot Sale",
-          promo: "⚡ Hot Sale por tiempo limitado",
+          promo: "(-15% de descuento, hasta el 1 de septiembre)",
           items: [
-            "Prácticas con ovinos en pie",
-            "Comidas de los dos días",
-            "Kit Zoquital + materiales",
-            "Diploma de participación",
+            "Manejo práctico de rebaño y genética",
+            "Prácticas en corral con ovinos",
+            "Tecnología 4.0 e Inteligencia Artificial",
+            "Branding para tu empresa ovina",
+            "Experiencias culturales incluidas",
           ],
         },
         {
@@ -1670,7 +1673,7 @@
           name: "Aparta tu lugar",
           desc: "Anticipo para reservar tu cupo (se descuenta del total).",
           price: 999,
-          link: "https://mpago.la/2UGEapB",
+          /*link: "https://mpago.la/2UGEapB",*/
           items: [
             "Reserva tu lugar hoy",
             "Cubre el resto antes de la fecha límite",
@@ -1681,10 +1684,10 @@
           id: "amenidades",
           name: "Acompañante · Amenidades",
           desc: "Para quien te acompaña sin tomar el curso.",
-          price: 1499,
-          link: "https://mpago.la/2ov1vUj",
+          price: 3499,
+          /*link: "https://mpago.la/2ov1vUj",*/
           items: [
-            "Comidas de los dos días",
+            "Comidas de los tres días",
             "Acceso a amenidades del evento",
             "Actividades extracurriculares",
           ],
@@ -1692,29 +1695,29 @@
       ];
 
       /* Formulario de registro (Google Forms) — SOLO para quienes YA pagaron.
-   Cambia este link si en algún momento usas otro formulario. */
-      const REGISTRO_FORM = "https://forms.gle/gGJgfGiWKBxzqb2o9";
+       Cambia este link si en algún momento usas otro formulario. */
+      /*const REGISTRO_FORM = "https://forms.gle/gGJgfGiWKBxzqb2o9";*/
       /* ======================================================================= */
 
       const money = (n) => "$" + n.toLocaleString("es-MX") + ".00";
 
       document.getElementById("pkgGrid").innerHTML = PACKAGES.map(
         (p) => `
-  <div class="pkg${p.feature ? " feature" : ""}">
-    ${p.flag ? `<span class="flag">${p.flag}</span>` : ""}
-    <h3>${p.name}</h3>
-    <p class="sub">${p.desc}</p>
-    <div class="price">
-      <span class="amt">$${p.price.toLocaleString("es-MX")}</span>
-      <span class="cur">MXN</span>
-      ${p.regular ? `<span class="was">$${p.regular.toLocaleString("es-MX")}</span>` : ""}
-    </div>
-    <div class="promo">${p.promo || "&nbsp;"}</div>
-    <ul>${p.items.map((i) => `<li>${i}</li>`).join("")}</ul>
-    <div class="foot">
-      <a class="btn btn-mp btn-block" href="${p.link}" target="_blank" rel="noopener" onclick="markIntent('${p.id}')">Pagar con Mercado Pago</a>
-    </div>
-  </div>`,
+      <div class="pkg${p.feature ? " feature" : ""}">
+        ${p.flag ? `<span class="flag">${p.flag}</span>` : ""}
+        <h3>${p.name}</h3>
+        <p class="sub">${p.desc}</p>
+        <div class="price">
+          <span class="amt">$${p.price.toLocaleString("es-MX")}</span>
+          <span class="cur">MXN</span>
+          ${p.regular ? `<span class="was">$${p.regular.toLocaleString("es-MX")}</span>` : ""}
+        </div>
+        <div class="promo">${p.promo || "&nbsp;"}</div>
+        <ul>${p.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+        <div class="foot">
+          <a class="btn btn-mp btn-block" href="${p.link}" target="_blank" rel="noopener" onclick="markIntent('${p.id}')">Pagar con Mercado Pago</a>
+        </div>
+      </div>`,
       ).join("");
 
       let intent = [];
@@ -1741,7 +1744,7 @@
       function waInfo() {
         window.open(
           waLink(
-            "¡Hola! Me interesa el Taller de Selección de Ovinos (4 y 5 de septiembre, Ex Hacienda El Zoquital). ¿Me pueden dar más información?",
+            "¡Hola! Me interesa el Diplomado en Ovinocultura 360° (19, 20 y 21 de noviembre, Ex Hacienda El Zoquital). ¿Me pueden dar más información?",
           ),
           "_blank",
         );
