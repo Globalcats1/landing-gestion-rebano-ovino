@@ -793,13 +793,190 @@
         }
       }
 
+      /*--------Ejes de aprendizaje----------*/
+
+      /* ---------- 3 EJES DE APRENDIZAJE ---------- */
+      .learning-axes {
+        padding: 5rem 0;
+        background: var(--bone);
+      }
+
+      .learning-axes .section-head {
+        max-width: 760px;
+        margin: 0 auto 2.8rem;
+        text-align: center;
+      }
+
+      .learning-axes .section-head > span {
+        display: inline-block;
+        margin-bottom: 0.6rem;
+
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+
+        color: var(--gold);
+      }
+
+      .learning-axes .section-head h2 {
+        margin: 0 0 0.8rem;
+
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.05;
+
+        color: var(--navy-deep);
+      }
+
+      .learning-axes .section-head p {
+        margin: 0;
+
+        font-size: 1rem;
+        line-height: 1.7;
+
+        color: var(--muted);
+      }
+
+      /* CONTENEDOR DE LAS 3 TARJETAS */
+      .axes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      /* TARJETA */
+      .axis-card {
+        overflow: hidden;
+
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+
+        box-shadow: 0 14px 32px rgba(24, 58, 99, 0.08);
+
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .axis-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 38px rgba(24, 58, 99, 0.13);
+      }
+
+      /* FOTO */
+      .axis-card__image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+
+        background: var(--bone-2);
+      }
+
+      .axis-card__image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      /* INFORMACIÓN */
+      .axis-card__content {
+        padding: 1.5rem;
+      }
+
+      .axis-card__label {
+        display: block;
+        margin-bottom: 0.6rem;
+
+        font-size: 0.72rem;
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        color: var(--gold);
+      }
+
+      .axis-card__content h3 {
+        margin: 0 0 0.8rem;
+
+        font-size: 1.35rem;
+        line-height: 1.2;
+
+        color: var(--navy-deep);
+      }
+
+      .axis-card__content p {
+        margin: 0;
+
+        font-size: 0.92rem;
+        line-height: 1.65;
+
+        color: var(--muted);
+      }
+
+      /* ---------- RESPONSIVE: 3 EJES ---------- */
+      @media (max-width: 900px) {
+        .axes-grid {
+          grid-template-columns: 1fr;
+          max-width: 520px;
+          margin: 0 auto;
+        }
+
+        .axis-card__image {
+          height: 360px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .learning-axes {
+          padding: 3.5rem 0;
+        }
+
+        .learning-axes .section-head {
+          margin-bottom: 2rem;
+        }
+
+        .learning-axes .section-head h2 {
+          font-size: 2rem;
+        }
+
+        .learning-axes .section-head p {
+          font-size: 0.95rem;
+        }
+
+        .axes-grid {
+          gap: 1.2rem;
+        }
+
+        .axis-card__image {
+          height: 300px;
+        }
+
+        .axis-card__content {
+          padding: 1.25rem;
+        }
+
+        .axis-card__content h3 {
+          font-size: 1.2rem;
+        }
+
+        .axis-card__content p {
+          font-size: 0.9rem;
+        }
+      }
+
       /* ---------- INFO ---------- */
       .info {
         background: #ffffff;
       }
       .info-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.8fr 1fr;
         gap: 1.3rem;
       }
       .info-card {
@@ -824,6 +1001,7 @@
         font-size: 0.98rem;
         color: #454d28;
         margin-top: 0.5rem;
+        
       }
       .info-card a.link {
         color: #4a6b1f;
@@ -1512,6 +1690,78 @@
           </div>
         </div>
 
+        <section class="learning-axes">
+          <div class="wrap">
+            <div class="section-head">
+              <span>3 ejes de aprendizaje</span>
+              <h2>3 especialistas. Una visión 360°</h2>
+              <p>
+                El Diplomado Ovinocultura 360° integra conocimiento técnico,
+                innovación con inteligencia artificial y estrategias de branding
+                y comercialización para fortalecer cada etapa de un proyecto
+                ovino.
+              </p>
+            </div>
+
+            <div class="axes-grid">
+              <article class="axis-card">
+                <div class="axis-card__image">
+                  <img
+                    src="./gregorio-gonzalez.webp"
+                    alt="Gregorio González Garza"
+                  />
+                </div>
+
+                <div class="axis-card__content">
+                  <span class="axis-card__label">Ovinocultura Estratégica</span>
+                  <h3>Gregorio González Garza</h3>
+                  <p>
+                    Experto ovinocultor con más de 25 años de trayectoria en
+                    México y Latinoamérica.
+                  </p>
+                </div>
+              </article>
+
+              <article class="axis-card">
+                <div class="axis-card__image">
+                  <img src="./hector-sauza.webp" alt="Héctor Sauza" />
+                </div>
+
+                <div class="axis-card__content">
+                  <span class="axis-card__label">Inteligencia Artificial</span>
+                  <h3>Héctor Sauza</h3>
+                  <p>
+                    CEO de MB Innovation Lab e Intellectia Academy. Ha impactado
+                    a más de 300 organizaciones en 7 países, ayudándolas a
+                    integrar innovación y eficiencia a través de la tecnología.
+                  </p>
+                </div>
+              </article>
+
+              <article class="axis-card">
+                <div class="axis-card__image">
+                  <img
+                    src="./raul-escalona2.webp"
+                    alt="Raúl Escalona Munguía"
+                  />
+                </div>
+
+                <div class="axis-card__content">
+                  <span class="axis-card__label"
+                    >Branding y Comercialización</span
+                  >
+                  <h3>Raúl Escalona Munguía</h3>
+                  <p>
+                    Director Comercial de Global Cats. Su sello es el diseño de
+                    planes de trabajo y estrategias de crecimiento a la medida
+                    para diversas industrias.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <div class="paystep reveal">
           <div>
             <h3>Ya pagaste, ¿qué sigue?</h3>
@@ -1546,9 +1796,25 @@
           <h4>Grand Hotel & Casino Vía Dorada</h4>
 
           <p>
-            Si vienes de otra ciudad, podrás hospedarte en el
-            <strong>Grand Hotel & Casino Vía Dorada</strong>, que ofrece una
-            tarifa preferencial para los participantes del
+            Si vienes de otra ciudad, toma en cuenta la distribución de sedes
+            para planear tu hospedaje:
+          </p>
+
+          <p style="margin-top: 0.8rem">
+            📍 <strong>2 días en Pachuca</strong> — Vía Dorada
+          </p>
+
+          <p>
+            📍 <strong>1 día en Atotonilco el Grande</strong> — Ex Hacienda El
+            Zoquital
+          </p>
+
+          <p style="margin-top: 1rem">
+            Para tu estancia en Pachuca, contamos con una
+            <strong
+              >tarifa preferencial en el Grand Hotel & Casino Vía Dorada</strong
+            >
+            para participantes del
             <strong>Diplomado Ovinocultura 360°</strong>.
           </p>
 
